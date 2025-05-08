@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnosis CVR - ¿Quiénes somos?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link id="style" rel="stylesheet" href="../css/index-light.css">
+    <link id="style2" rel="stylesheet" href="../css/quienes-light.css">
+    <link rel="icon" href="/imagenes/icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav id="menu-principal">
+            <ul>
+                <li><a id="menu-inicio" href="../index.html">GNOSIS CVR</a></li>
+                <li><a id="menu-reserva" href="#reserva-section">Reserva tu CVR</a></li>
+                <li><a id="menu-prueba" href="quienes.html">¿Quiénes somos?</a></li>
+                <li><a id="menu-nosotros" href="sobrenosotros.html">Sobre Nosotros</a></li>
+                <li><button id="boton-tema">Cambiar Tema</button></li>
+                <li>
+                    <select id="selector-idioma">
+                        <option value="es">Español</option>
+                        <option value="en">English</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="equipo-fake" class="team">
+        <div class="team-intro">
+            <div class="ruido" id="ruido"></div>
+            <audio class="audio" id="audio" src="../audio/transition.mp3"></audio>
+            <h2>GNOSIS-CVR</h2>
+            <p id="dialog">Cuatro mentes distintas, una visión común de como percibimos la realidad.</p>
+        </div>
+        <div class="team-members">
+            <div class="member">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <img id="img-fake" src="../imagenes/Miguel.png" alt="Miguel Centellas">
+                        </div>
+                        <div class="back">
+                            <h3 id="ERText1">La realidad</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h3 id="name-member1">MIGUEL CENTELLAS — Líder de UX</h3>
+                <p id="quote1" class="quote1">"Diseñar experiencias no es solo estética, es conectar con la mente del
+                    usuario."
+                </p>
+                <p id="PeqText1"><strong>Especialista en</strong> experiencia de usuario con más de 10 años de
+                    trayectoria en
+                    diseño de interfaces inmersivas.</p>
+            </div>
+            <div class="member">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <img id="img-fake" src="../imagenes/Renato.PNG" alt="Renato Gallegos">
+                        </div>
+                        <div class="back">
+                            <h3 id="ERText2">Podría ser</h3>
+                        </div>
+                    </div>
+                </div>
+                <h3 id="name-member2">RENATO GALLEGOS — DT</h3>
+                <p id="quote2" class="quote2">"La tecnología debe servir a la visión, no al revés."</p>
+                <p id="PeqText2"><strong>Ingeniero en software</strong> con experiencia en desarrollo de sistemas
+                    complejos y
+                    liderazgo técnico.</p>
+            </div>
+            <div class="member">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <img id="img-fake" src="../imagenes/Elias.PNG" alt="Jorge Henoc">
+                        </div>
+                        <div class="back">
+                            <h3 id="ERText3">Distinta.</h3>
+                        </div>
+                    </div>
+                </div>
+                <h3 id="name-member3">JORGE HENOC — Ingeniero de Hardware</h3>
+                <p id="quote3" class="quote3">"De la idea al objeto, cada componente importa."</p>
+                <p id="PeqText3"><strong>Ingeniero electrónico</strong> con experiencia en diseño de hardware para
+                    dispositivos de
+                    alta precisión.</p>
+            </div>
+            <div class="member">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <img id="img-fake" src="../imagenes/Cesar.PNG" alt="César Salirrosas">
+                        </div>
+                        <div id="real" class="back">
+                            <button id="realidad" onclick="activarRuido()">Conoce la verdad.</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h3 id="name-member4">CÉSAR SALIRROSAS — Jefe de Marketing</h3>
+                <p id="quote4" class=" quote4">"La innovación comienza con una comprensión profunda del mercado."</p>
+                <p id="PeqText4"><strong>Emprendedor y estratega</strong> con visión global. César validó la propuesta
+                    de valor de
+                    GNOSIS-CVR.</p>
+            </div>
+        </div>
+
+    </section>
+    <section id="equipo-real" class="team">
+        <div class="team-intro">
+            <h2 id="Proyecto">Proyecto de clase 'Desarrollo de entornos web'</h2>
+            <p id="Carrera">Carrera de Cibertec: Computación e Informática.</p>
+        </div>
+        <div class="team-members">
+            <div class="member">
+                <h3>MIGUEL CENTELLAS</h3>
+                <p id="quote5" class="quote5">"El conocimiento que no se aplica, no sirve."
+                </p>
+                <p id="txtreal1">Apasionado del aprendizaje continuo y del poder brindar soluciones a problemas
+                    sociales.</p>
+                <a href="https://github.com/reyrojo2" target="_blank">
+                    <img src="../imagenes/github.png" alt="github">
+                </a>
+                <a href="https://www.linkedin.com/in/miguel-centellas-81107729a" target="_blank">
+                    <img src="../imagenes/linkedin.png" alt="linkedin">
+                </a>
+                <a href="mailto:miguelcentellas@gmail.com" target="_blank">
+                    <img src="../imagenes/gmail.png" alt="linkedin">
+                </a>
+            </div>
+            <div class="member">
+                <h3>RENATO GALLEGOS</h3>
+                <p id="quote6" class="quote6">"Cada problema tiene solución... y si no tiene, la crearé"</p>
+                <p id="txtreal2">Firme defensor del uso de la tecnología para el beneficio de las personas, generando un
+                    avance en la
+                    sociedad</p>
+                <a href="https://github.com/Renyu2121" target="_blank">
+                    <img src="../imagenes/github.png" alt="github">
+                </a>
+                <a href="https://www.linkedin.com/in/renato-gallegos-50b559257/" target="_blank">
+                    <img src="../imagenes/linkedin.png" alt="linkedin">
+                </a>
+                <a href="mailto:Niglet.renato@gmail.com" target="_blank">
+                    <img src="../imagenes/gmail.png" alt="linkedin">
+                </a>
+            </div>
+            <div class="member">
+                <h3>JORGE HENOC</h3>
+                <p id="quote7" class="quote7">"Solo existen personas con problemas y luego aquellos que los resuelven.
+                    Ahí entro yo."</p>
+                <p id="txtreal3">Deseoso de llegar a ser un ingeniero de software que marque la diferencia en el mundo
+                    actual.</p>
+                <a href="https://github.com/Elias2049J" target="_blank">
+                    <img src="../imagenes/github.png" alt="github">
+                </a>
+                <a href="https://www.linkedin.com/in/elías-jorge-ugarte-8a5567235/" target="_blank">
+                    <img src="../imagenes/linkedin.png" alt="linkedin">
+                </a>
+                <a href="mailto:henoceliasjorgeugarte@gmail.com" target="_blank">
+                    <img src="../imagenes/gmail.png" alt="linkedin">
+                </a>
+            </div>
+            <div class="member">
+                <h3>CÉSAR SALIRROSAS</h3>
+                <p id="quote8" class="quote8">"Las dificultades de la vida solo me hacen querer avanzar más."</p>
+                <p id="txtreal4">La carrera me dará las herramientas para darle forma a las ideas que tengo en la mente.
+                </p>
+                <a href="https://github.com/Csalirrosasc" target="_blank">
+                    <img src="../imagenes/github.png" alt="github">
+                </a>
+                <a href="https://www.linkedin.com/in/césar-salirrosas-cisneros-738353150/" target="_blank">
+                    <img src="../imagenes/linkedin.png" alt="linkedin">
+                </a>
+                <a href="mailto:ceyestj1107@gmail.com" target="_blank">
+                    <img src="../imagenes/gmail.png" alt="linkedin">
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Div para efectos de popups (cubre todo con blur)-->
+    <div id="overlay"></div>
+    </div>
+
+    <section id="reserva-section" class="reserva-section">
+        <div class="form-container">
+            <button type="button" id="cerrar-reserva" class="cerrar-btn">X</button>
+            <h2>Reserva tu Visor CVR</h2>
+            <form id="reserva-form" action="#" method="POST">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required>
+
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Seleccione...</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="visor">Tipo de visor deseado:</label>
+                <select id="tipo-visor" name="visor" required>
+                    <option value="">Seleccione...</option>
+                    <option value="visor1">Con NeuroMalla</option>
+                    <option value="visor2">Sin NeuroMalla</option>
+                </select>
+
+                <button type="submit" id="boton-env-res" class="boton">Reservar</button>
+            </form>
+        </div>
+
+        <div id="mensaje-container">
+            <p class="mensaje">mensaje</p>
+        </div>
+    </section>
+    <br>
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>© 2025 GNOSIS CVR. Todos los derechos reservados.</p>
+                <p>Contacto: <a href="mailto:info@gnosiscvr.com">info@gnosiscvr.com</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="../js/quienes.js"></script>
+<script src="../js/colores.js"></script>
+<script src="../js/idioma.js"></script>
+<script src="../js/reserva.js"></script>
+
+</html>

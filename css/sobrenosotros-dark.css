@@ -1,0 +1,161 @@
+html {
+    scroll-behavior: smooth;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/*Estilos del menú principal*/
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #dddddd;
+    font-weight: 500;
+}
+
+.cuerpo-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+}
+
+.background-image.active {
+    opacity: 0.3;
+}
+
+.cuerpo-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px 20px;
+    width: 100%;
+    background-color: transparent;
+}
+
+.cuerpo {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Orbitron;
+    width: 100%;
+    background-color: #1e1e1e;
+    min-height: 60vh;
+    margin-bottom: 0;
+}
+
+.cuerpo-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+    max-width: 60vmin;
+    color: #e0e0e0;
+}
+
+.cuerpo-text a {
+    text-decoration: none;
+    color: #4dabf7;
+}
+
+.cuerpo-image {
+    flex: 1;
+    text-align: right;
+    max-width: 100%;
+}
+
+.cuerpo h1 {
+    font-size: 9vmin;
+    font-family: orbitron;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.cuerpo p {
+    font-size: 5vmin;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+/* Sección de historia general */
+.historia-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 8vh 10vw;
+    background: #1a1a1a;
+    gap: 5vw;
+    flex-wrap: wrap;
+}
+
+.historia-texto {
+    flex: 1;
+    min-width: 280px;
+    color: #e0e0e0;
+}
+
+.historia-texto h2 {
+    font-size: 4.8vmin;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.historia-texto p {
+    font-size: 2.8vmin;
+    line-height: 1.6;
+    margin-bottom: 2vh;
+    text-align: justify;
+    color: #d0d0d0;
+}
+
+#hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.seccion-testimonios {
+    background: #232323;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    z-index: 1;
+    color: #e0e0e0;
+}
+
+.seccion-testimonios h2 {
+    font-size: 6vmin;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+#p-frase {
+    font-size: 4vmin;
+    color: #bbbbbb;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+    transition: opacity 0.5s;
+}

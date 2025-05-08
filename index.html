@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnosis CVR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link id="style" rel="stylesheet" href="./css/index-light.css">
+    <link rel="icon" href="/imagenes/icono.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <header>
+        <nav id="menu-principal">
+            <ul>
+                <li><a id="menu-inicio" href="index.html">GNOSIS CVR</a></li>
+                <li><a id="menu-reserva" href="#reserva-section">Reserva tu CVR</a></li>
+                <li><a id="menu-prueba" href="html/quienes.html">¿Quiénes somos?</a></li>
+                <li><a id="menu-nosotros" href="html/sobrenosotros.html">Sobre Nosotros</a></li>
+                <li><button id="boton-tema">Cambiar Tema</button></li>
+                <li>
+                    <select id="selector-idioma">
+                        <option value="es">Español</option>
+                        <option value="en">English</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+        <h1 id="main-title">GNOSIS CVR: Explora mundos que solo tu mente podría imaginar… hasta ahora.</h1>
+    </header>
+
+    <section id="model-section">
+        <div class="model-area">
+            <div id="model-container">
+                <!-- Modelo 3D ----------------------------------------------------------------------------------->
+                <model-viewer id="modelo1" src="./animation/casco/scene.gltf" camera-controls tone-mapping="agx"
+                    poster="./animation/casco/poster.webp" shadow-intensity="0" exposure="0.60" shadow-softness="0"
+                    camera-target="0m 0m 0m" camera-orbit="0deg 90deg 4m">
+                    <button id="btn1" class="hotspot" slot="hotspot-3"
+                        data-position="-0.011781914498028456m -0.22620243805757712m 0.9807450076409118m"
+                        data-normal="0m -4.371139050718397e-8m 0.9999999999999991m"
+                        data-visibility-attribute="visible">1</button>
+                    <button id="btn2" class="hotspot" slot="hotspot-2"
+                        data-position="-0.5189684800011323m -0.16897680059735336m -0.5496715579798511m"
+                        data-normal="-0.9664227233085702m -0.06239310744987892m -0.24926736652757997m"
+                        data-visibility-attribute="visible">2</button>
+                    <button id="btn3" class="hotspot" slot="hotspot-4"
+                        data-position="0.00014602135769958835m 0.38069115798987974m 0.28337029171582506m"
+                        data-normal="0m 0.7646339200584216m 0.644464869714472m"
+                        data-visibility-attribute="visible">3</button>
+                    <div class="progress-bar hide" slot="progress-bar">
+                        <div class="update-bar"></div>
+                    </div>
+                </model-viewer>
+                <model-viewer id="modelo2" src="./animation/neuromalla/scene.gltf" camera-controls tone-mapping="agx"
+                    poster="./animation/neuromalla/poster.webp" shadow-intensity="0" shadow-softness="0"
+                    exposure="0.50">
+                    <button id="btn4" class="hotspot" slot="hotspot-1"
+                        data-position="0.03496549195343435m 0.1692809130606765m 0.050832698080957694m"
+                        data-normal="0.10883659370461236m 0.49387319437640353m 0.862695695913237m"
+                        data-visibility-attribute="visible">0</button>
+                    <div class="progress-bar hide" slot="progress-bar">
+                        <div class="update-bar"></div>
+                    </div>
+                </model-viewer>
+            </div>
+
+            <!-- Info del Modelo ------------------------------------------>
+            <div id="model-info-container">
+                <div id="model-info-title">
+                    <h2 class="title-info" id="title1">GNOSIS CVR</h2>
+                    <h2 class="title-info" id="title2">Pantalla nítida</h2>
+                    <h2 class="title-info" id="title3">Correas suaves</h2>
+                    <h2 class="title-info" id="title4">NeuroMalla</h2>
+                </div>
+                <div id="model-info-content">
+                    <p class="content-info" id="content1">¡Descubre el GNOSIS CVR, el visor de realidad virtual más
+                        avanzado jamás creado!
+                        <br> <br><strong> Con una resolución ultra HD.</strong>
+                        <br><strong>Seguimiento ocular de precisión.</strong>
+                        <br><strong>Diseño ergonómico futurista</strong>
+                        <br><br>
+                        Te transportará a mundos que nunca imaginaste. Prepárate para una experiencia inmersiva sin
+                        precedentes. ¡El futuro está aquí!
+                    </p>
+                    <p class="content-info" id="content2">Sumérgete en una claridad asombrosa con el GNOSIS CVR. Su
+                        pantalla ultra nítida,
+                        con resolución 4K por ojo y tecnología OLED de última generación, redefine la inmersión visual.
+                        Cada detalle, cada textura, cada destello de luz se siente real. No es solo ver, es
+                        experimentar. GNOSIS CVR: donde la realidad supera a la fantasía.</p>
+                    <p class="content-info" id="content3">El confort cobra una nueva dimensión con las correas ultra
+                        suaves del GNOSIS CVR.
+                        Fabricadas con materiales de grado aeroespacial, se ajustan con precisión y ligereza,
+                        permitiéndote sesiones prolongadas sin presión ni fatiga. Es como si el visor desapareciera…
+                        solo quedas tú y el mundo virtual.</p>
+                    <p class="content-info" id="content4">En el corazón del GNOSIS CVR, una revolucionaria neuromalla
+                        interactiva se
+                        conecta a tus impulsos subconscientes. Esta tecnología avanzada simula percepciones sensoriales
+                        directamente en tu cerebro, generando una experiencia tan auténtica que tu mente no puede
+                        distinguirla de la realidad. Con GNOSIS, no solo ves otro mundo: lo vives.</p>
+                </div>
+            </div>
+    </section>
+
+    <section id="preview-section">
+        <nav id="preview-menu">
+            <ul id="preview-menu-ul">
+                <li><button id="btn_prev1">Pasado</button></li>
+                <li><button id="btn_prev2">Futuro</button></li>
+                <li><button id="btn_prev3">Realidad Alterna</button></li>
+                <li><button id="btn_prev4">Distopía</button></li>
+            </ul>
+
+        </nav>
+        <div id="preview-container">
+            <div id="preview-video">
+                <video class="video1 actual" src="/videos/primero.mp4" loop autoplay muted></video>
+                <video class="video2" loop autoplay muted></video>
+
+            </div>
+            <div id="preview-desc">
+                <div id="preview-desc-title">
+                    <h2 id="title-desc1">DEMO</h2>
+                    <h2 id="title-desc2">DEMO PASADO</h2>
+                    <h2 id="title-desc3">DEMO FUTURO</h2>
+                    <h2 id="title-desc4">DEMO REALIDAD ALTERNA</h2>
+                    <h2 id="title-desc5">DEMO DISTOPÍA</h2>
+                </div>
+                <div id="preview-desc-info">
+                    <p id="p-desc-ft1">¡Descubre los secretos de una era olvidada</p>
+                    <p id="p-desc-ft2">¡Explora un mañana dominado por máquinas!</p>
+                    <p id="p-desc-ft3">¡Vive una historia que nunca ocurrió!</p>
+                    <p id="p-desc-ft4">¡Sobrevive en un mundo sin libertad!</p>
+                    <p id="p-contador"></p>
+                    <p id="p-desc-sc">Para el lanzamiento oficial.</p>
+                </div>
+                <div class="botones">
+                    <button id="boton-prueba" class="boton">Prueba Gratis</button>
+                    <button id="boton-reserva" class="boton">Separa tus VR</button>
+                </div>
+            </div>
+    </section>
+
+    <!-- Div para efectos de popups (cubre todo con blur)-->
+    <div id="overlay"></div>
+    </div>
+
+    <section id="reserva-section" class="reserva-section">
+        <div class="form-container">
+            <button type="button" id="cerrar-reserva" class="cerrar-btn">X</button>
+            <h2>Reserva tu Visor CVR</h2>
+            <form id="reserva-form" action="#" method="POST">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required>
+
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Seleccione...</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="visor">Tipo de visor deseado:</label>
+                <select id="tipo-visor" name="visor" required>
+                    <option value="">Seleccione...</option>
+                    <option value="visor1">Con NeuroMalla</option>
+                    <option value="visor2">Sin NeuroMalla</option>
+                </select>
+
+                <button type="submit" id="boton-env-res" class="boton">Reservar</button>
+            </form>
+        </div>
+
+        <div id="mensaje-container">
+            <p class="mensaje">mensaje</p>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2025 GNOSIS CVR. Todos los derechos reservados.</p>
+                <p>Contacto: <a href="mailto:info@gnosiscvr.com">info@gnosiscvr.com</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script type="module" src="js/preview.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/colores.js"></script>
+<script src="js/reserva.js"></script>
+<script src="js/barra_progreso.js"></script>
+<script src="js/contador.js"></script>
+<script src="js/idioma.js"></script>
+<script type="module" src="js/videos.js"></script>
+<script type="module" src="js/cajas_info.js"></script>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>

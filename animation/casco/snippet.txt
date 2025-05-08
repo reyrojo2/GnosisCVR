@@ -1,0 +1,12 @@
+<model-viewer src="scene.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="agx" poster="poster.webp" shadow-intensity="0" exposure="0.43" shadow-softness="0" camera-target="0m 0m 0m">
+    <button class="Hotspot" slot="hotspot-2" data-position="-0.5189684800011323m -0.20187680059735336m -0.5496715579798511m" data-normal="-0.9664227233085702m -0.06239310744987892m -0.24926736652757997m" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-3" data-position="-0.011781914498028456m -0.22620243805757712m 0.9807450076409118m" data-normal="0m -4.371139050718397e-8m 0.9999999999999991m" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-4" data-position="0.00014602135769958835m 0.38069115798987974m 0.28337029171582506m" data-normal="0m 0.7646339200584216m 0.644464869714472m" data-visibility-attribute="visible"></button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+</model-viewer>
