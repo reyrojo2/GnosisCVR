@@ -92,10 +92,10 @@ const traducciones = {
 
         // Botones de acción
         "#boton-prueba": "Prueba Gratis",
-        "#boton-reserva": "Separa tus VR",
+        "#boton-reserva": "Separa tus CVR",
 
         // Formulario de reserva
-        ".form-container h2": "Reserva tu Visor VR",
+        ".form-container h2": "Reserva tu Visor CVR",
         "label[for='nombre']": "Nombre completo:",
         "label[for='edad']": "Edad:",
         "label[for='genero']": "Género:",
@@ -217,10 +217,10 @@ const traducciones = {
 
         // Action buttons
         "#boton-prueba": "Free Trial",
-        "#boton-reserva": "Reserve your VR",
+        "#boton-reserva": "Reserve your CVR",
 
         // Reservation form
-        ".form-container h2": "Reserve your VR Headset",
+        ".form-container h2": "Reserve your CVR Headset",
         "label[for='nombre']": "Full name:",
         "label[for='edad']": "Age:",
         "label[for='genero']": "Gender:",
