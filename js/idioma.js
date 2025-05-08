@@ -2,7 +2,7 @@ const traducciones = {
     es: {
         "#main-title": "GNOSIS CVR: Explora mundos que solo tu mente podría imaginar… hasta ahora.",
         "#menu-inicio": "GNOSIS CVR",
-        "#menu-reserva": "Reserva tu VR",
+        "#menu-reserva": "Reserva tu CVR",
         "#menu-prueba": "¿Quiénes somos?",
         "#menu-nosotros": "Sobre Nosotros",
         "#boton-tema": "Cambiar Tema",
@@ -12,8 +12,8 @@ const traducciones = {
         "#title4": "NeuroMalla",
         "#content1": `¡Descubre el GNOSIS CVR, el visor de realidad virtual más avanzado jamás creado!
                             <br> <br><strong> Con una resolución ultra HD.</strong>
-                            <br> <br><strong>Seguimiento ocular de precisión.</strong>
-                            <br> <br><strong>Diseño ergonómico futurista</strong>
+                            <br><strong>Seguimiento ocular de precisión.</strong>
+                            <br><strong>Diseño ergonómico futurista</strong>
                             <br><br>
                             Te transportará a mundos que nunca imaginaste. Prepárate para una experiencia inmersiva sin
                             precedentes. ¡El futuro está aquí!`,
@@ -21,7 +21,7 @@ const traducciones = {
         "#content3": "El confort cobra una nueva dimensión con las correas ultra suaves del GNOSIS CVR. Fabricadas con materiales de grado aeroespacial, se ajustan con precisión y ligereza, permitiéndote sesiones prolongadas sin presión ni fatiga. Es como si el visor desapareciera… solo quedas tú y el mundo virtual.",
         "#content4": "En el corazón del GNOSIS CVR, una revolucionaria neuromalla interactiva se conecta a tus impulsos subconscientes. Esta tecnología avanzada simula percepciones sensoriales directamente en tu cerebro, generando una experiencia tan auténtica que tu mente no puede distinguirla de la realidad. Con GNOSIS, no solo ves otro mundo: lo vives.",
         "#pruebagratis": "Prueba Gratis",
-        "#SeparaVR": "Separa tus VR",
+        "#SeparaVR": "Separa tus CVR",
         "#titleSN": "El producto revolucionario que lo cambiará todo.",
         "#textB": `
             Conoce la <a href="#historiaText"><strong>historia del producto.</strong></a>`,
@@ -130,7 +130,7 @@ const traducciones = {
     en: {
         "#main-title": "GNOSIS CVR: Explore worlds only your mind could imagine... until now.",
         "#menu-inicio": "GNOSIS CVR",
-        "#menu-reserva": "Book your VR",
+        "#menu-reserva": "Book your CVR",
         "#menu-prueba": "Who we are?",
         "#menu-nosotros": "About Us",
         "#boton-tema": "Change Mode",
@@ -140,8 +140,8 @@ const traducciones = {
         "#title4": "NeuroMesh",
         "#content1": `¡Discover the GNOSIS CVR — the most advanced virtual reality headset ever created!
                     <br><br><strong>Featuring ultra HD resolution.</strong>
-                    <br><br><strong>Precision eye-tracking technology.</strong>
-                    <br><br><strong>Futuristic ergonomic design.</strong>
+                    <br><strong>Precision eye-tracking technology.</strong>
+                    <br><strong>Futuristic ergonomic design.</strong>
                     <br><br>
                     It will transport you to worlds you never imagined.
                     Get ready for an unprecedented immersive experience.
@@ -150,7 +150,7 @@ const traducciones = {
         "#content3": "Comfort takes on a new dimension with the GNOSIS CVR’s ultra-soft straps. Crafted from aerospace-grade materials, they adjust with precision and lightness, allowing for extended sessions without pressure or fatigue. It’s as if the headset disappears… leaving only you and the virtual world.",
         "#content4": "At the heart of the GNOSIS CVR lies a revolutionary interactive neuromesh that connects to your subconscious impulses. This advanced technology simulates sensory perceptions directly in your brain, creating an experience so authentic your mind can’t tell it from reality. With GNOSIS, you don’t just see another world — you live it.",
         "#pruebagratis": "Free Trial",
-        "#SeparaVR": "Preorder your VR",
+        "#SeparaVR": "Preorder your CVR",
         "#titleSN": "The revolutionary product that will change everything.",
         "#textB": `
             Learn about the <a href="#historiaText"><strong>product's history.</strong></a>`,
