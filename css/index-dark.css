@@ -70,7 +70,7 @@ header {
 
 
 #menu-inicio {
-    border: #a0a0a0 solid 0.4vmin;
+    border: black solid 0.4vmin;
     border-radius: 5px;
 }
 
@@ -82,11 +82,11 @@ header {
 
 #selector-idioma {
     color: rgb(200, 200, 205);
-    font-family: inherit;
+    font-family: Orbitron;
     font-size: 2.5vmin;
     border-radius: 5px;
     padding: 5px 10px;
-    border: 1px solid #555;
+    border: black solid 1px;
     background-color: rgb(50, 50, 55);
 }
 
@@ -96,10 +96,10 @@ header {
 }
 
 #boton-tema {
-    font-family: inherit;
+    font-family: Orbitron;
     font-size: 2.2vmin;
     font-weight: bold;
-    border: none;
+    border: black solid 1px;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
@@ -140,7 +140,7 @@ model-viewer {
     display: flex;
     width: auto;
     height: 100%;
-    border: hsl(0, 0%, 60%) solid 3pt;
+    border: black solid 3pt;
     border-radius: 5pt;
     box-shadow: 0px 3px 24px 6px rgba(0, 0, 0, 0.5);
     z-index: 9;
@@ -310,9 +310,9 @@ model-viewer {
     font-family: "Orbitron", sans-serif;
     width: 100%;
     height: 100%;
-    border-top: #a0a0a0 solid 2pt;
-    border-left: #a0a0a0 solid 1pt;
-    border-right: #a0a0a0 solid 1pt;
+    border-top: black solid 2pt;
+    border-left: black solid 1pt;
+    border-right: black solid 1pt;
     background: inherit;
     font-size: 2.2vmin;
     cursor: pointer;
@@ -457,7 +457,7 @@ model-viewer {
 #boton-prueba,
 #boton-reserva {
     background-color: rgba(60, 60, 65, 0.8);
-    border: 2pt solid rgba(200, 200, 205, 0.8);
+    border: 2pt solid black;
     border-radius: 8px;
     padding: 12px 35px;
     font-size: 2.2vmin;
@@ -660,9 +660,10 @@ model-viewer {
     color: #00bcd4;
 }
 
-/* Pantallas pequeñas */
-@media (max-width: 600px) {  
+    /* Pantallas pequeñas */
+@media (max-width: 600px) {
 
+    
     .model-area {
         flex-direction: column;
         width: 100%;
@@ -684,7 +685,7 @@ model-viewer {
         max-width: none;
         border: none;
         box-shadow: none;
-        padding: 2vh 5vw;
+        padding: 4vh 0;
     }
 
     .title-info {
@@ -717,12 +718,57 @@ model-viewer {
     #preview-section {
         margin-top: 0;
     }
+    
+    #preview-menu {
+        bottom: 0;
+    }
+
+    #preview-menu ul li button {
+        font-size: 2.8vmin;
+    }
 
     #preview-container {
-        height: 80vmin;
+        height: 120vmin;
+    }
+
+    #preview-video, #preview-desc {
+        margin-top: 0;
+    }
+
+    #preview-desc-title {
+        position: relative;
+        top: 10vmin;
+    }
+
+    #title-desc1, #title-desc2, #title-desc3, #title-desc4, #title-desc5 {
+        font-size: 15vmin;
+    }
+
+    #preview-desc-info {
+        margin-top: 4vmin;
+    }
+
+    #p-desc-ft1, #p-desc-ft2, #p-desc-ft3, #p-desc-ft4, #p-contador {
+        position: relative;
+        top: 10vmin;
+        font-size: 5vmin;
+    }
+
+    #p-contador {
+        margin: 2vmin 0;
+    }
+
+    #p-desc-sc {
+        position: relative;
+        font-size: 5vmin;
+        top: 10vmin;
+        
     }
 
     .botones {
+        position: relative;
+        top: 10vmin;
+        margin: 10vmin 0;
         display: flex;
         flex-direction: column;
     }
@@ -733,6 +779,10 @@ model-viewer {
 
     #boton-reserva {
         order: 2;
+    }
+
+    #boton-prueba, #boton-reserva {
+        font-size: 4vmin;
     }
 
     /* Footer  */
@@ -777,6 +827,6 @@ model-viewer {
 
     .footer-social a {
         font-size: 5vmin;
-        margin: 0 3vw;
+        margin: 1vh 3vw;
     }
 }
