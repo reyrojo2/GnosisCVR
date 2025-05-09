@@ -82,7 +82,7 @@ header {
 
 #selector-idioma {
     color: rgb(0, 0, 0);
-    font-family: inherit;
+    font-family: Orbitron;
     font-size: 2.5vmin;
     border-radius: 5px;
     padding: 5px 10px;
@@ -96,7 +96,7 @@ header {
 }
 
 #boton-tema {
-    font-family: inherit;
+    font-family: Orbitron;
     font-size: 2.2vmin;
     font-weight: bold;
     border: none;
@@ -732,6 +732,15 @@ model-viewer {
         margin-top: 0;
     }
 
+    #preview-desc-title {
+        position: relative;
+        top: 10vmin;
+    }
+
+    #title-desc1, #title-desc2, #title-desc3, #title-desc4, #title-desc5 {
+        font-size: 15vmin;
+    }
+
     #preview-desc-info {
         margin-top: 4vmin;
     }
@@ -815,6 +824,6 @@ model-viewer {
 
     .footer-social a {
         font-size: 5vmin;
-        margin: 0 3vw;
+        margin: 1vh 3vw;
     }
 }
