@@ -682,7 +682,7 @@ model-viewer {
         max-width: none;
         border: none;
         box-shadow: none;
-        padding: 2vh 5vw;
+        padding: 4vh 0;
     }
 
     .title-info {
@@ -715,12 +715,48 @@ model-viewer {
     #preview-section {
         margin-top: 0;
     }
+    
+    #preview-menu {
+        bottom: 0;
+    }
+
+    #preview-menu ul li button {
+        font-size: 2.8vmin;
+    }
 
     #preview-container {
-        height: 80vmin;
+        height: 120vmin;
+    }
+
+    #preview-video, #preview-desc {
+        margin-top: 0;
+    }
+
+    #preview-desc-info {
+        margin-top: 4vmin;
+    }
+
+    #p-desc-ft1, #p-desc-ft2, #p-desc-ft3, #p-desc-ft4, #p-contador {
+        position: relative;
+        top: 10vmin;
+        font-size: 5vmin;
+    }
+
+    #p-contador {
+        margin: 2vmin 0;
+    }
+
+    #p-desc-sc {
+        position: relative;
+        font-size: 5vmin;
+        top: 10vmin;
+        
     }
 
     .botones {
+        position: relative;
+        top: 10vmin;
+        margin: 10vmin 0;
         display: flex;
         flex-direction: column;
     }
@@ -731,6 +767,10 @@ model-viewer {
 
     #boton-reserva {
         order: 2;
+    }
+
+    #boton-prueba, #boton-reserva {
+        font-size: 4vmin;
     }
 
     /* Footer  */
