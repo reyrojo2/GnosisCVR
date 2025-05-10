@@ -159,3 +159,14 @@ nav ul li a {
     font-style: italic;
     transition: opacity 0.5s;
 }
+
+@media (max-width: 600px) {
+
+    .historia-info {
+        padding: 8vmin 8vmin;
+    }
+
+    .historia-texto {
+        min-width: auto;
+    }
+}
