@@ -81,7 +81,7 @@
     color: #66aaff;
 }
 
-#img-fake {
+.img-fake {
     width: 150px;
     height: 200px;
 }
@@ -182,4 +182,25 @@
     font-family: Orbitron;
     font-size: 2.2vmin;
     cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .member {
+        padding: 2vmin 2vmin 2vmin 2vmin;
+    }
+
+    .flip-container {
+        width: 100%;
+        height: 44vmin;
+    }
+
+    .front img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .img-fake {
+        width: 100%;
+        height: 100%;
+    }
 }
