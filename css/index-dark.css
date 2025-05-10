@@ -496,10 +496,10 @@ model-viewer {
     transform: translate(-50%, -50%);
     width: 55vmin;
     max-width: 70vmin;
-    height: 70vmin;
+    height: fit-content;
     flex-direction: column;
     background-color: rgb(45, 45, 50);
-    padding: 20pt 20pt 40pt 20pt;
+    padding: 20pt 20pt 20pt 20pt;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     z-index: 1000;
@@ -783,6 +783,36 @@ model-viewer {
 
     #boton-prueba, #boton-reserva {
         font-size: 4vmin;
+    }
+
+    .form-container {
+        width: 100%;
+        height: fit-content;
+        padding: 8vmin;
+        max-width: 75vmin;
+    }
+
+    .form-container h2 {
+        font-size: 6vmin;
+    }
+
+    #reserva-form label {
+        font-family: 'Audiowide';
+        font-size: 5vmin;
+        font-weight: normal;
+        margin: 4vmin 0 1vmin 0;
+    }
+
+    #nombre, #edad, #genero, #telefono, #correo, #tipo-visor {
+        width: 100%;
+        height: 6vmin;
+        font-size: 4vmin;
+    }
+
+    #boton-env-res.boton {
+        margin-top: 4vmin;
+        padding: 2vmin;
+        font-size: 5vmin;
     }
 
     /* Footer  */
