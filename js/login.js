@@ -1,5 +1,4 @@
 const loginForm = document.getElementById("login-form"); 
-const mensajeDiv = document.getElementById("mensaje-container"); 
 let mensaje = document.querySelector(".mensaje");  
 
 async function login(e) {
