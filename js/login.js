@@ -1,5 +1,4 @@
 const loginForm = document.getElementById("login-form"); 
-let mensaje = document.querySelector(".mensaje");  
 
 async function login(e) {
     e.preventDefault();
