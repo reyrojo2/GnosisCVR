@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = "../login.html";
         } else {
             construirDashboard();
-            cargarDatos();
+            cargarDatosUsuario();
         }
     }).catch(error => {
         console.error("Error al verificar token:", error);
@@ -171,7 +171,7 @@ function configurarEventos() {
         logoutButton.addEventListener("click", function() {
             localStorage.removeItem("admin_jwt");
             sessionStorage.removeItem("admin_user");
-            window.location.href = "../login.html";
+            window.location.href = "../html/login.html";
         });
     }
     const navLinks = document.querySelectorAll(".sidebar a");
@@ -188,6 +188,10 @@ function configurarEventos() {
 
             const seccionId = `seccion-${this.dataset.section}`;
             document.getElementById(seccionId).classList.add("active");
+
+            if (this.dataset.section === "formularios") {
+                cargarDatosForms();
+            }
         });
     });
     
@@ -217,13 +221,13 @@ function configurarEventos() {
             e.preventDefault();
             await guardarUsuario(new FormData(this));
             modalUsuario.style.display = "none";
-            cargarDatos();
+            cargarDatosUsuario();
         });
     }
 }
 
 // cargar datos usuarios
-async function cargarDatos() {
+async function cargarDatosUsuario() {
     const token = localStorage.getItem("admin_jwt");
     const tablaContainer = document.getElementById("tabla-datos");
     
@@ -269,7 +273,7 @@ function mostrarTablaUsuarios(usuarios) {
     const thead = document.createElement("thead");
     const trHead = document.createElement("tr");
     
-    const columnas = ["id", "email", "nombre", "role", "active", "created_at"];
+    const columnas = ["id_user", "email", "name", "role", "active", "created_at"];
     const columnasVisibles = ["ID", "Email", "Nombre", "Rol", "Estado", "Fecha Creación", "Acciones"];
     
     columnasVisibles.forEach(col => {
@@ -418,7 +422,7 @@ async function cambiarEstadoUsuario(userId, nuevoEstado) {
             throw new Error("Error al cambiar estado del usuario");
         }
 
-        cargarDatos();
+        cargarDatosUsuario();
         
         mostrarMensaje(
             `Usuario ${nuevoEstado ? "activado" : "desactivado"} correctamente`, 
@@ -444,4 +448,77 @@ function mostrarMensaje(texto, tipo = "info") {
     setTimeout(() => {
         mensajeContainer.innerHTML = "";
     }, 4000);
+}
+
+async function cargarDatosForms() {
+    const token = localStorage.getItem("admin_jwt");
+    const tablaForms = document.getElementById("tabla-formularios");
+    if (!tablaForms) return;
+
+    tablaForms.innerHTML = "<p>Cargando formularios...</p>"
+    
+    try {
+        const response = await fetch("https://gnosiscvr-backend.onrender.com/admin/forms", {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error("Error al obtener formularios", error);   
+        }
+
+        const datos = await response.json();
+        mostrarTablaForms(datos)
+    } catch (error) {
+        console.error("Error al cargar formularios" + error.message);
+        tablaForms.innerHTML = `<p class="error-mensaje">Error al cargar formularios: ${error.message}</p>`;
+    }
+}
+
+function mostrarTablaForms(forms) {
+    const tablaForms = document.getElementById("tabla-formularios");
+    if (!tablaForms) return;
+
+    if (!forms || forms.length === 0) {
+        tablaForms.innerHTML = "<p>No hay formularios que mostrar</p>"
+        return;
+    }
+
+    const columnas = ["id_form", "name", "age", "gender", "phone_num", "email", "viewer_type", "submit_date"];
+    const columnasVisibles = ["ID", "Nombre", "Edad", "Género", "Teléfono", "Correo", "Tipo de Visor", "Fecha"];
+
+    const tabla = document.createElement("table");
+    tabla.className = "tabla-admin";
+
+    const thead = document.createElement("thead");
+    const trHead = document.createElement("tr");
+    columnasVisibles.forEach(col => {
+        const th = document.createElement("th");
+        th.textContent = col;
+        trHead.appendChild(th);
+    });
+    thead.appendChild(trHead);
+    tabla.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+    forms.forEach(form => {
+        const tr = document.createElement("tr");
+        columnas.forEach(campo => {
+            const td = document.createElement("td");
+            if (campo === "submit_date") {
+                const fecha = new Date(form[campo]);
+                td.textContent = fecha.toLocaleDateString();
+            } else {
+                td.textContent = form[campo] || "-";            
+            }
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+    });
+    tabla.appendChild(tbody);
+
+    tablaForms.innerHTML = "";
+    tablaForms.appendChild(tabla);
 }
