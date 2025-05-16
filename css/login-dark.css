@@ -43,8 +43,8 @@
     color: rgb(200, 200, 205);
 }
 
-#correo,
-#password {
+#pass,
+#email {
     width: 100%;
     padding: 2pt;
     margin-top: 0.5vh;

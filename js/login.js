@@ -1,18 +1,27 @@
 const loginForm = document.getElementById("login-form"); 
 
+function mostrarMensaje(texto, color = "red") {
+    mensajeDiv.style.display = "block";
+    mensaje.innerHTML = texto;
+    mensaje.style.color = color;
+    clearTimeout(mostrarMensaje.timeout);
+    mostrarMensaje.timeout = setTimeout(() => {
+        mensajeDiv.style.display = "none";
+        mensaje.innerHTML = "";
+    }, 3000);
+}
+
 async function login(e) {
     e.preventDefault();
-    
+
     const email = document.getElementById("email").value;
     const pass = document.getElementById("pass").value;
-    
+
     if (!email || !pass) {
-        mensajeDiv.style.display = "block";
-        mensaje.innerHTML = "Por favor, complete todos los campos";
-        mensaje.style.color = "red";
+        mostrarMensaje("Por favor, complete todos los campos", "red");
         return;
     }
-    
+
     const indicadorCarga = document.createElement("div");
     indicadorCarga.id = "loading-indicator";
     indicadorCarga.textContent = "Cargando...";
@@ -23,16 +32,16 @@ async function login(e) {
         color: black; padding: 20px;
         border-radius: 5px; z-index: 10000;`;
     document.body.appendChild(indicadorCarga);
-    
+
     const dataUser = {
         email: email,
         pass: pass
     };
-    
+
     try {
         const result = await enviarFormLogin(dataUser);
         document.body.removeChild(indicadorCarga);
-        
+
         if (result.success) {
             localStorage.setItem("admin_jwt", result.token);
             if (result.user) {
@@ -42,29 +51,23 @@ async function login(e) {
                     role: result.user.role
                 }));
             }
-            
-            mensajeDiv.style.display = "block";
-            mensaje.style.color = "green";
-            mensaje.innerHTML = `¡Sesión iniciada con éxito!`;
-            
+
+            mostrarMensaje("¡Sesión iniciada con éxito!", "green", 1500);
+
             setTimeout(() => {
                 document.querySelector("#overlay").style.display = "none";
                 mensajeDiv.style.display = "none";
                 window.location.href = "../admin/dashboard.html";
             }, 1500);
-            
+
             loginForm.reset();
         } else {
-            mensajeDiv.style.display = "block";
-            mensaje.innerHTML = result.error || "Error al iniciar sesión, inténtelo de nuevo";
-            mensaje.style.color = "red";
+            mostrarMensaje(result.error || "Error al iniciar sesión, inténtelo de nuevo", "red");
         }
     } catch (err) {
         console.error("Error en el proceso de login:", err);
         document.body.removeChild(indicadorCarga);
-        mensajeDiv.style.display = "block";
-        mensaje.innerHTML = `Error inesperado. Inténtelo de nuevo.`;
-        mensaje.style.color = "red";
+        mostrarMensaje("Error inesperado. Inténtelo de nuevo.", "red");
     }
 }
 
