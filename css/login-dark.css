@@ -1,0 +1,77 @@
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    display: none;
+}
+
+.login-container {
+    position: fixed;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55vmin;
+    max-width: 70vmin;
+    height: fit-content;
+    flex-direction: column;
+    background-color: rgb(45, 45, 50);
+    padding: 20pt 20pt 20pt 20pt;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.login-container h2 {
+    font-family: "Audiowide", sans-serif;
+    text-align: center;
+    margin-bottom: 1vmin;
+    color: rgb(220, 220, 225);
+    font-size: 3vmin;
+}
+
+#login-form label {
+    display: block;
+    margin-top: 1vh;
+    font-weight: bold;
+    font-size: 2.2vmin;
+    color: rgb(200, 200, 205);
+}
+
+#correo,
+#password {
+    width: 100%;
+    padding: 2pt;
+    margin-top: 0.5vh;
+    border: 1px solid #555;
+    border-radius: 6px;
+    font-size: 2.2vmin;
+    background-color: rgb(60, 60, 65);
+    color: rgb(220, 220, 225);
+}
+
+#boton-login.boton {
+    margin-top: 25px;
+    width: 100%;
+    padding: 1.5vmin;
+    background-color: #1e90ff;
+    color: #fff;
+    font-size: 2.2vmin;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#boton-login.boton:hover {
+    background-color: #0078d4;
+}
+
+#footer {
+    position: absolute;
+}

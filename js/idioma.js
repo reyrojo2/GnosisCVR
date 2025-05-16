@@ -5,6 +5,7 @@ const traducciones = {
         "#menu-reserva": "Reserva tu CVR",
         "#menu-prueba": "¿Quiénes somos?",
         "#menu-nosotros": "Sobre Nosotros",
+        "#menu-login": "Iniciar Sesión",
         "#boton-tema": "Cambiar Tema",
         "#title1": "GNOSIS CVR",
         "#title2": "Pantalla nítida",
@@ -110,6 +111,11 @@ const traducciones = {
         "option[value='visor2']": "Sin NeuroMalla",
         "#boton-env-res": "Reservar",
 
+        // Form login
+        ".login-container h2": "Iniciar sesión en el sistema",
+        "label[for='pass']": "Contraseña",
+        "#boton-login": "Iniciar Sesión",
+
         // Footer
         ".footer-info p:first-child": `© 2025 GNOSIS CVR. Todos los derechos reservados.`,
         ".footer-info p:last-child": "Contacto: info@gnosiscvr.com",
@@ -133,6 +139,7 @@ const traducciones = {
         "#menu-reserva": "Book your CVR",
         "#menu-prueba": "Who we are?",
         "#menu-nosotros": "About Us",
+        "#menu-login": "Log In",
         "#boton-tema": "Toggle Theme",
         "#title1": "GNOSIS CVR",
         "#title2": "Sharp Screen",
@@ -234,6 +241,12 @@ const traducciones = {
         "option[value='visor1']": "With NeuroMesh",
         "option[value='visor2']": "Without NeuroMesh",
         "#boton-env-res": "Reserve",
+
+        // Form login
+        ".login-container h2": "Log into the system",
+        "label[for='pass']": "Password",
+        "#boton-login": "Log-in",
+
 
         // Footer
         ".footer-info p:first-child": `© 2025 GNOSIS CVR. All rights reserved.`,

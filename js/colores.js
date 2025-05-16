@@ -2,6 +2,7 @@ const botonTema = document.getElementById("boton-tema");
 const estiloIndex = document.getElementById("style");
 const estiloQuienes = document.getElementById("style2");
 const estiloSobreNos = document.getElementById("style3");
+const estiloLogin = document.getElementById("style4");
 
 let temaOscuro = false;
 
@@ -17,6 +18,9 @@ function cambiarTema() {
         if (estiloSobreNos) {
             estiloSobreNos.setAttribute("href", "../css/sobrenosotros-light.css");
         }
+        if (estiloLogin) {
+            estiloLogin.setAttribute("href", "../css/login-light.css");
+        }
     } else {
         estiloIndex.setAttribute("href", "../css/index-dark.css");
         if (estiloQuienes) {
@@ -24,6 +28,9 @@ function cambiarTema() {
         }
         if (estiloSobreNos) {
             estiloSobreNos.setAttribute("href", "../css/sobrenosotros-dark.css");
+        }
+        if (estiloLogin) {
+            estiloLogin.setAttribute("href", "../css/login-dark.css");
         }
     }
 

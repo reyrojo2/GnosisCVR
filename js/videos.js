@@ -33,7 +33,6 @@ function carouselVideos(x) {
     
     // Limpiar el intervalo si existe para no crear mas instancias
     if (intervaloActual) {
-        console.log("Limpiando intervalo anterior:", intervaloActual);
         clearInterval(intervaloActual);
     }
 
@@ -82,7 +81,6 @@ function slider() {
     intervaloActual = setInterval(() => {
         indice = (indice + 1) % videos.length;
         cambiarVideo(indice);
-        console.log("Valor del índice actual: " + indice);
     }, 6000);
 }
 
