@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 async function verificarToken(token) {
     try {
-        const response = await fetch("https://gnosiscvr-backend.onrender.com/verify-token", {
+        const response = await fetch("https://gnosiscvr-backend.onrender.com/admin/users", {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${token}`
@@ -114,7 +114,7 @@ function construirDashboard() {
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="nombre">Nombre:</label>
+                        <label for="name">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" required>
                     </div>
                     <div class="form-group">
@@ -342,7 +342,7 @@ function editarUsuario(usuario) {
     passHint.style.display = "inline";
     
     form.email.value = usuario.email || "";
-    form.nombre.value = usuario.nombre || "";
+    form.name.value = usuario.name || "";
     form.pass.value = ""; 
     form.role.value = usuario.role || "user";
     form.active.value = usuario.active === false ? "false" : "true";
