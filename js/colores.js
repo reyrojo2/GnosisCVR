@@ -3,10 +3,9 @@ const estiloIndex = document.getElementById("style");
 const estiloQuienes = document.getElementById("style2");
 const estiloSobreNos = document.getElementById("style3");
 const estiloLogin = document.getElementById("style4");
+const estiloDashboard = document.getElementById("style5");
 
 let temaOscuro = false;
-
-
 
 // Funcion para cambiar el tema
 function cambiarTema() {
@@ -21,6 +20,9 @@ function cambiarTema() {
         if (estiloLogin) {
             estiloLogin.setAttribute("href", "../css/login-light.css");
         }
+        if (estiloDashboard) {
+            estiloDashboard.setAttribute("href", "../css/dashboard-light.css");
+        }
     } else {
         estiloIndex.setAttribute("href", "../css/index-dark.css");
         if (estiloQuienes) {
@@ -31,6 +33,9 @@ function cambiarTema() {
         }
         if (estiloLogin) {
             estiloLogin.setAttribute("href", "../css/login-dark.css");
+        }
+        if (estiloDashboard) {
+            estiloDashboard.setAttribute("href", "../css/dashboard-dark.css");
         }
     }
 
