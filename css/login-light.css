@@ -29,8 +29,8 @@
     font-size: 2.2vmin;
 }
 
-#password,
-#correo {
+#pass,
+#email {
     width: 100%;
     padding: 2pt;
     margin-top: 0.5vh;
