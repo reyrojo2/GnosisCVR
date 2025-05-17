@@ -1,17 +1,5 @@
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 999;
-    display: none;
-}
-
 .login-container {
-    position: fixed;
+    position: absolute;
     display: flex;
     top: 50%;
     left: 50%;
@@ -24,15 +12,14 @@
     padding: 20pt 20pt 20pt 20pt;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
 }
 
 .login-container h2 {
     font-family: "Audiowide", sans-serif;
     text-align: center;
     margin-bottom: 1vmin;
-    color: rgb(220, 220, 225);
-    font-size: 3vmin;
+    color: rgb(255, 255, 255);
+    font-size: 4vmin;
 }
 
 #login-form label {
@@ -40,7 +27,7 @@
     margin-top: 1vh;
     font-weight: bold;
     font-size: 2.2vmin;
-    color: rgb(200, 200, 205);
+    color: rgb(255, 255, 255);
 }
 
 #pass,
@@ -74,4 +61,34 @@
 
 #footer {
     position: absolute;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        top: 35%;
+        width: 70vmin;
+        height:70vmin;
+    }
+
+    .login-container h2 {
+        margin-bottom: 4vmin;
+        font-size: 7vmin;
+    }
+
+    #login-form label {
+        font-size: 4vmin;
+    }
+
+    #pass,
+    #email {
+        font-size: 4vmin;
+    }
+
+    #boton-login.boton {
+        font-size: 4vmin;
+    }
+
+    #boton-login.boton:hover {
+        background-color: #007acc;
+    }
 }
