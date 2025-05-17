@@ -28,8 +28,8 @@ async function login(e) {
     indicadorCarga.style.cssText = `
         position: fixed; top: 50%; left: 50%;
         transform: translate(-50%, -50%);
-        background: rgba(255, 255, 255, 0.7);
-        color: black; padding: 20px;
+        background: rgba(255, 255, 255, 0.78);
+        color: black; padding: 4vmin;
         border-radius: 5px; z-index: 10000;`;
     document.body.appendChild(indicadorCarga);
 

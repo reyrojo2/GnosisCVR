@@ -59,6 +59,11 @@
     position: absolute;
 }
 
+#mensaje-container {
+    top: 43%;
+    left: 43%;
+}
+
 @media (max-width: 768px) {
     .login-container {
         top: 35%;
@@ -87,4 +92,18 @@
     #boton-login.boton:hover {
         background-color: #007acc;
     }
+
+    #mensaje-container {
+        top: 35%;
+        left: 25%;
+        max-width: 45%;
+        text-align: center;
+        font-size: 6vmin;
+        padding: 10pt 10pt 10pt 10pt;
+    }
+
+    #loading-indicator {
+        color: black;
+        font-size: 6vmin;
+    }    
 }
