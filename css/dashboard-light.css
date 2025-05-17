@@ -25,6 +25,11 @@
 }
 
 /* Reseteo y estilos básicos*/
+
+#menu-principal {
+    position: absolute;
+}
+
 .dashboard * {
     margin: 0;
     padding: 0;

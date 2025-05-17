@@ -24,7 +24,11 @@
     --table-hover: rgba(52, 152, 219, 0.1);
 }
 
-/* Reseteo y estilos básicos - Específicos para dashboard, sin afectar index */
+/* Reseteo y estilos básicos */
+#menu-principal {
+    position: absolute;
+}
+
 .dashboard * {
     margin: 0;
     padding: 0;
@@ -528,99 +532,6 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(22px);
-}
-
-/* Menú principal - Adaptación del estilo proporcionado */
-#menu-principal {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4.55vh;
-    width: 100%;
-    padding: 15px 15px;
-    justify-content: center;
-    background-color: rgb(40, 40, 45);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
-    z-index: 10;
-}
-
-#menu-principal ul {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    list-style: none;
-    margin: -20px;
-    padding: 1vmin;
-    font-size: 2.5vmin;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-
-#menu-principal ul::-webkit-scrollbar {
-    display: none;
-}
-
-#menu-principal li {
-    margin-right: 2.3vmin;
-    min-width: 120px;
-}
-
-#menu-principal a {
-    font-family: 'Orbitron', sans-serif;
-    text-decoration: none;
-    color: rgb(200, 200, 205);
-    padding: 5px 10px;
-    transition: all 0.3s ease;
-}
-
-#menu-inicio {
-    border: black solid 0.4vmin;
-    border-radius: 5px;
-}
-
-#menu-principal ul a:hover {
-    color: rgb(40, 40, 45);
-    background-color: rgba(200, 200, 205, 0.9);
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-#selector-idioma {
-    color: rgb(200, 200, 205);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5vmin;
-    border-radius: 5px;
-    padding: 5px 10px;
-    border: black solid 1px;
-    background-color: rgb(50, 50, 55);
-}
-
-#selector-idioma:hover {
-    color: rgb(220, 220, 225);
-    background-color: rgb(60, 60, 65);
-}
-
-#boton-tema {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.2vmin;
-    font-weight: bold;
-    border: black solid 1px;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    background-color: rgb(50, 50, 55);
-    color: rgb(200, 200, 205);
-    transition: all 0.3s ease;
-}
-
-#boton-tema:hover {
-    background-color: rgb(200, 200, 205);
-    color: rgb(40, 40, 45);
 }
 
 /* Responsive */
