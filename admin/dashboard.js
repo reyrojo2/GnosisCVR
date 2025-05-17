@@ -466,7 +466,7 @@ async function cargarDatosForms() {
         });
 
         if (!response.ok) {
-            throw new Error("Error al obtener formularios", error);   
+            throw new Error("Error al obtener formularios");   
         }
 
         const datos = await response.json();
