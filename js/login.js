@@ -135,12 +135,16 @@ toggleForm.addEventListener("click", function(e) {
     modoRegistro = !modoRegistro;
     if (modoRegistro) {
         tituloLogin.innerHTML = "Registrarse";
-        elemRegistro.forEach(el => el.style.display = "block");
+        elemRegistro.forEach(el => {el.style.display = "block"});
+        elemRegistro[2].required = true;
+        elemRegistro[3].required = true;
         botonLogin.textContent = "Registrarse";
         toggleForm.textContent = "¿Ya tienes cuenta? Inicia sesión";
     } else {
         tituloLogin.innerHTML = "Iniciar Sesión en el sistema";
         elemRegistro.forEach(el => el.style.display = "none");
+        elemRegistro[2].required = false;
+        elemRegistro[3].required = false;
         botonLogin.textContent = "Iniciar Sesión";
         toggleForm.textContent = "¿No tienes cuenta? Regístrate aquí";
     }
