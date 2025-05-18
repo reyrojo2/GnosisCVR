@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const token = localStorage.getItem("auth_token");
     
     if (!token) {
-        window.location.href = "../login.html";
+        window.location.href = "login.html";
         return;
     }
     
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!esValido) {
             localStorage.removeItem("auth_token");
             sessionStorage.removeItem("user_data");
-            window.location.href = "../login.html";
+            window.location.href = "login.html";
         } else {
             construirDashboard();
             cargarDatosUsuario();
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Error al verificar token:", error);
         localStorage.removeItem("auth_token");
         sessionStorage.removeItem("user_data");
-        window.location.href = "../login.html";
+        window.location.href = "login.html";
     });
 });
 
