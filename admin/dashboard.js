@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const token = localStorage.getItem("admin_jwt");
+    const token = localStorage.getItem("auth_token");
     
     if (!token) {
         window.location.href = "../login.html";
@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     verificarToken(token).then(esValido => {
         if (!esValido) {
-            localStorage.removeItem("admin_jwt");
-            sessionStorage.removeItem("admin_user");
+            localStorage.removeItem("auth_token");
+            sessionStorage.removeItem("user_data");
             window.location.href = "../login.html";
         } else {
             construirDashboard();
@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }).catch(error => {
         console.error("Error al verificar token:", error);
-        localStorage.removeItem("admin_jwt");
-        sessionStorage.removeItem("admin_user");
+        localStorage.removeItem("auth_token");
+        sessionStorage.removeItem("user_data");
         window.location.href = "../login.html";
     });
 });
@@ -153,7 +153,7 @@ function mostrarInfoUsuario() {
     const userInfoElement = document.getElementById("user-info");
     if (!userInfoElement) return;
     
-    const userData = JSON.parse(sessionStorage.getItem("admin_user") || "{}");
+    const userData = JSON.parse(sessionStorage.getItem("user_data") || "{}");
     
     if (userData.email) {
         userInfoElement.innerHTML = `
@@ -169,8 +169,8 @@ function configurarEventos() {
     const logoutButton = document.getElementById("logout-button");
     if (logoutButton) {
         logoutButton.addEventListener("click", function() {
-            localStorage.removeItem("admin_jwt");
-            sessionStorage.removeItem("admin_user");
+            localStorage.removeItem("auth_token");
+            sessionStorage.removeItem("user_data");
             window.location.href = "../html/login.html";
         });
     }
@@ -228,7 +228,7 @@ function configurarEventos() {
 
 // cargar datos usuarios
 async function cargarDatosUsuario() {
-    const token = localStorage.getItem("admin_jwt");
+    const token = localStorage.getItem("auth_token");
     const tablaContainer = document.getElementById("tabla-datos");
     
     if (!tablaContainer) return;
@@ -358,7 +358,7 @@ function editarUsuario(usuario) {
 
 // Guardar usuario 
 async function guardarUsuario(formData) {
-    const token = localStorage.getItem("admin_jwt");
+    const token = localStorage.getItem("auth_token");
     const form = document.getElementById("form-usuario");
     const userId = form.dataset.userId;
     
@@ -407,7 +407,7 @@ async function guardarUsuario(formData) {
 }
 
 async function cambiarEstadoUsuario(userId, nuevoEstado) {
-    const token = localStorage.getItem("admin_jwt");
+    const token = localStorage.getItem("auth_token");
     
     try {
         const response = await fetch(`https://gnosiscvr-backend.onrender.com/admin/users/${userId}`, {
@@ -453,7 +453,7 @@ function mostrarMensaje(texto, tipo = "info") {
 }
 
 async function cargarDatosForms() {
-    const token = localStorage.getItem("admin_jwt");
+    const token = localStorage.getItem("auth_token");
     const tablaForms = document.getElementById("tabla-formularios");
     if (!tablaForms) return;
 
