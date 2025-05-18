@@ -28,8 +28,10 @@
     font-size: 2.2vmin;
 }
 
+#name,
 #pass,
-#email {
+#email,
+#confirm-pass {
     width: 100%;
     padding: 2pt;
     margin-top: 0.5vh;
@@ -80,8 +82,10 @@
         font-size: 4vmin;
     }
 
+    #name,
     #pass,
-    #email {
+    #email,
+    #confirm-pass {
         font-size: 4vmin;
     }
 

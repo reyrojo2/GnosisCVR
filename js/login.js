@@ -12,9 +12,8 @@ function mostrarMensaje(texto, color = "red") {
 }
 
 async function login(e) {
-    e.preventDefault();
 
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email").value.toLowerCase();
     const pass = document.getElementById("pass").value;
 
     if (!email || !pass) {
@@ -43,9 +42,9 @@ async function login(e) {
         document.body.removeChild(indicadorCarga);
 
         if (result.success) {
-            localStorage.setItem("admin_jwt", result.token);
+            localStorage.setItem("auth_token", result.token);
             if (result.user) {
-                sessionStorage.setItem("admin_user", JSON.stringify({
+                sessionStorage.setItem("user_data", JSON.stringify({
                     id: result.user.id,
                     email: result.user.email,
                     role: result.user.role
@@ -105,7 +104,7 @@ async function enviarFormLogin(dataUser) {
 }
 
 function verificarEstadoAuth() {
-    const token = localStorage.getItem("admin_jwt");
+    const token = localStorage.getItem("auth_token");
     if (token) {
         if (window.location.pathname.includes("/login.html")) {
             window.location.href = "../admin/dashboard.html";
@@ -118,10 +117,101 @@ function verificarEstadoAuth() {
     }
 }
 
+const elemRegistro = [
+    document.querySelector("label[for='nombre']"),
+    document.querySelector("label[for='confirm-pass']"),
+    document.getElementById("name"),
+    document.getElementById("confirm-pass"),
+];
+const botonLogin = document.getElementById("boton-login");
+const textToggle = document.getElementById("toggle-form-p");
+const toggleForm = document.getElementById("mostrar-registro");
+const tituloLogin = document.querySelector(".login-container h2");
+
+let modoRegistro = false;
+
+toggleForm.addEventListener("click", function(e) {
+    e.preventDefault();
+    modoRegistro = !modoRegistro;
+    if (modoRegistro) {
+        tituloLogin.innerHTML = "Registrarse";
+        elemRegistro.forEach(el => el.style.display = "block");
+        botonLogin.textContent = "Registrarse";
+        toggleForm.textContent = "¿Ya tienes cuenta? Inicia sesión";
+    } else {
+        tituloLogin.innerHTML = "Iniciar Sesión en el sistema";
+        elemRegistro.forEach(el => el.style.display = "none");
+        botonLogin.textContent = "Iniciar Sesión";
+        toggleForm.textContent = "¿No tienes cuenta? Regístrate aquí";
+    }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     verificarEstadoAuth();
     
     if (loginForm) {
-        loginForm.addEventListener("submit", login);
+        loginForm.addEventListener("submit", async function (e) {    
+            e.preventDefault();
+            if (modoRegistro) {
+                const formData = new FormData(loginForm);
+                const dataNuevoUser = {};
+
+                for (let [key, value] of formData.entries()) {
+                    //exclluir ambos campos del lowercase para evitar problemas con el backend
+                    if (key === "pass" || key === "confirm-pass") {
+                        dataNuevoUser[key] = value;
+                    } else {
+                        dataNuevoUser[key] = value.toLowerCase();
+                    }
+                }
+                
+                //verificar que ambos valores sean identicos
+                if (dataNuevoUser.pass !== dataNuevoUser["confirm-pass"]) {
+                    mostrarMensaje("Las contraseñas no coinciden", "red");
+                    return;
+                }
+
+                //aqui se elimina los key, value de confirm-pass pq no se usa en backend 
+                delete dataNuevoUser["confirm-pass"];
+                await registrarUser(dataNuevoUser);
+            } else {
+                await login(e);
+            }
+        });
     }
 });
+
+async function registrarUser(data) {
+    try {
+        let url, method;
+        //ruta endpoint para registros publicos
+        url = "https://gnosiscvr-backend.onrender.com/register";
+        method = "POST";
+        
+        const response = await fetch(url, {
+            method: method,
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+            mode: "cors"
+        });
+        
+        if (!response.ok) {
+            throw new Error("Error al registrarse");
+        }
+
+        const dataRes = await response.json();
+        if (dataRes.token) {
+            localStorage.setItem("auth_token", dataRes.token);
+            sessionStorage.setItem("user_data", JSON.stringify(dataRes.user));
+        }
+        
+        mostrarMensaje("Registración Exitosa", "success");
+        return true;
+    } catch (error) {
+        console.error("Error al registrarse:", error);
+        mostrarMensaje(`Error: ${error.message}`, "error");
+        return false;
+    }
+}

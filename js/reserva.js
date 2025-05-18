@@ -9,7 +9,7 @@ const botonReserva = document.getElementById("boton-reserva");
 const mensajeDiv = document.getElementById("mensaje-container");
 let mensaje = document.querySelector(".mensaje");
 
-function reserva(e) {
+async function reserva(e) {
     e.preventDefault();
 
     const indicadorCarga = document.createElement('div');
@@ -20,32 +20,37 @@ function reserva(e) {
     
     const data = Object.fromEntries(new FormData(form).entries());
     
-    guardarForm(data)
-        .then(success => {
-            document.body.removeChild(indicadorCarga);
-            
-            if (success) {
-                const nombre = document.getElementById("nombre").value;
-                
+    try {
+        const success = await guardarForm(data);
+        document.body.removeChild(indicadorCarga);
+
+        if (success) {
+            const nombre = document.getElementById("nombre").value;
+
+            document.querySelector(".form-container").style.display = 'none';
+            mensajeDiv.style.display = "block";
+            mensaje.style.color = 'black';
+
+            mensaje.innerHTML = `¡Gracias por tu reserva, ${nombre}!`;
+
+            setTimeout(() => {
+                document.querySelector("#overlay").style.display = 'none';
                 document.querySelector(".form-container").style.display = 'none';
-                mensajeDiv.style.display = "block";
-                mensaje.style.color = 'black';
-                
-                mensaje.innerHTML = `¡Gracias por tu reserva, ${nombre}!`;
-                
-                setTimeout(() => {
-                    document.querySelector("#overlay").style.display = 'none';
-                    document.querySelector(".form-container").style.display = 'none';
-                    mensajeDiv.style.display = 'none';
-                }, 1500);
-                
-                form.reset();
-            } else {
-                mensajeDiv.style.display = "block";
-                mensaje.innerHTML = `Error al enviar el formulario. Por favor, inténtalo de nuevo`;
-                mensaje.style.color = 'red';
-            }
-        });
+                mensajeDiv.style.display = 'none';
+            }, 1500);
+
+            form.reset();
+        } else {
+            mensajeDiv.style.display = "block";
+            mensaje.innerHTML = `Error al enviar el formulario. Por favor, inténtalo de nuevo`;
+            mensaje.style.color = 'red';
+        }
+    } catch (err) {
+        document.body.removeChild(indicadorCarga);
+        mensajeDiv.style.display = "block";
+        mensaje.innerHTML = `Error inesperado. Por favor, inténtalo de nuevo`;
+        mensaje.style.color = 'red';
+    }
 }
 
 async function guardarForm(data) {

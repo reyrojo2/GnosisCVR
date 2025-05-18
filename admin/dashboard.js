@@ -377,7 +377,7 @@ async function guardarUsuario(formData) {
             url = `https://gnosiscvr-backend.onrender.com/admin/users/${userId}`;
             method = "PATCH";
         } else {
-            url = "https://gnosiscvr-backend.onrender.com/save-user";
+            url = "https://gnosiscvr-backend.onrender.com/admin/users";
             method = "POST";
         }
         
@@ -394,8 +394,10 @@ async function guardarUsuario(formData) {
         if (!response.ok) {
             throw new Error("Error al guardar usuario");
         }
-        
+
         mostrarMensaje("Usuario guardado con éxito", "success");
+        //recargar la lista despues de insertar el nuevo usuario
+        cargarDatosUsuario();
         return true;
     } catch (error) {
         console.error("Error al guardar usuario:", error);
