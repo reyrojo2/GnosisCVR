@@ -211,7 +211,7 @@ async function registrarUser(data) {
             sessionStorage.setItem("user_data", JSON.stringify(dataRes.user));
         }
         
-        mostrarMensaje("Registración Exitosa", "success");
+        mostrarMensaje("Registración Exitosa", "green");
         return true;
     } catch (error) {
         console.error("Error al registrarse:", error);

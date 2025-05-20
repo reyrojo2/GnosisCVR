@@ -55,7 +55,7 @@ async function reserva(e) {
 
 async function guardarForm(data) {
     try {        
-        const res = await fetch('https://gnosiscvr-backend.onrender.com/guardar-form', {
+        const res = await fetch('https://gnosiscvr-backend.onrender.com/save-form', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
